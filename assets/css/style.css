@@ -77,6 +77,23 @@ a:link:active,
 a:visited:active {
   color: #FF0000;
 }
+ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-block: 1em;
+  padding-inline-start: 40px;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+  margin-block: 1em;
+  padding-inline-start: 40px;
+}
+
+li {
+  display: list-item;
+}
 
 /* Content specific styles */
 a:hover {
@@ -90,36 +107,43 @@ body {
     flex-direction: column;
     margin: 0;
 }
-.site-name {
-    display: block;
-    font-size: 1.5em;
-    margin-top: 0.83em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-}
-.site-topic {
-    display: block;
-    font-size: 1.17em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-}
 .hero {
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 25px;
 }
 header {
-    text-align: center;
-    padding-top: 1.5rem
+    
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-bottom: 2px solid black;
 }
-nav {
+.site-topic {
+    margin: 0;
+    justify-self: start;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+.site-name {
+    margin: 0;
+    justify-self: center;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+.header-images {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 1.17em;
+    align-items: center;
+    gap: 1rem;
+    justify-self: end;
 }
 footer {
     position: static;
