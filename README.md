@@ -8,7 +8,6 @@ Personal portfolio website showcasing my professional experience, technical skil
 
 - **HTML5** — Website structure and content
 - **CSS3** — Styling and responsive design
-- **JavaScript** — Lightweight client-side interactivity
 - **Cloudflare Pages** — Static hosting and CDN
 - **GitHub** — Version control and automated deployment integration
 
@@ -19,18 +18,13 @@ It is intentionally designed to be lightweight, fast, and accessible.
 
 ```text
 /
-├── index.html          - Home/About page
-├── experience/         - Professional experience page
-│   └── index.html
-├── projects/           - Software development projects page
-│   └── index.html
+├── index.html          - Portfolio
 ├── assets/
 │   ├── css/
-│   │   └── styles.css
-│   |   ├── reset.css
-│   ├── js/
-│   │   └── main.js
-│   └── images/
+│   │   ├── reset.css
+│   │   └── style.css
+│   ├── images/
+│   └── projects/       - Spiral classification plots
 ├── favicon.svg
 ├── .gitignore
 ├── .gitattributes
