@@ -1,0 +1,149 @@
+/* Default styles */
+h1 { 
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h3 { 
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h4 { 
+    display: block;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h5 { 
+    display: block;
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h6 { 
+    display: block;
+    font-size: .67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+a {
+  display: inline;
+  text-decoration: underline;
+  cursor: pointer; /* Rendered as a hand icon when hovering over links with an href */
+}
+a:link {
+  color: -webkit-link;
+}
+a:visited {
+  color: #551A8B; 
+}
+a:link:active,
+a:visited:active {
+  color: #FF0000;
+}
+
+/* Content specific styles */
+a:hover {
+    color:chocolate;
+}
+body {
+    line-height: 1.2;
+    min-height: 100vh;      
+    min-height: 100dvh;     
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.site-name {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+.site-topic {
+    display: block;
+    font-size: 1.17em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+.hero {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 25px;
+}
+header {
+    text-align: center;
+    padding-top: 1.5rem
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.17em;
+}
+footer {
+    position: static;
+    margin-top: auto;
+    padding: 1.5rem 0;
+    background-color: black;
+    color: white;
+}
+.footer-content {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    gap: 1rem;
+}
+.footer-content address {
+    margin-left: auto;
+    font-size: clamp(0.5rem, 3vw, 1rem);
+}
+
+/* Media queres */
+@media (max-width: 1025px) {
+    .hero {margin-left: 10%; margin-right: 10%;}
+}
+@media (max-width: 425px) {
+    nav {display: grid; grid-template-columns: 1fr; grid-template-rows: repeat(5, 1fr); gap: 3px}
+}

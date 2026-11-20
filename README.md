@@ -27,6 +27,7 @@ It is intentionally designed to be lightweight, fast, and accessible.
 ├── assets/
 │   ├── css/
 │   │   └── styles.css
+│   |   ├── reset.css
 │   ├── js/
 │   │   └── main.js
 │   └── images/
