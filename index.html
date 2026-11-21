@@ -6,103 +6,116 @@
     <title>Zachary Manning</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css?v=20261121-spacing">
 </head>
 <body>
-    <div class="hero">
-        <header>
+    <header>
+        <div class="header-content">
             <p class="site-topic">Technology Portfolio</p>
             <h1 class="site-name">Zachary Manning</h1>
             <div class="header-images">
-                <a rel="me" href="https://github.com/KingManning">
-                    <img src="./assets/images/GitHub_Invertocat_Black.svg" width="30" alt="GitHub">
+                <a class="github-link" rel="me" href="https://github.com/KingManning" aria-label="GitHub">
+                    <span class="github-icon" aria-hidden="true"></span>
                 </a>
                 <a rel="me" href="https://www.linkedin.com/in/zachary-manning-64b93733a/">
                     <img src="./assets/images/InBug-Black.png" width="30" alt="LinkedIn">
                 </a>      
             </div>
-        </header>
+        </div>
+    </header>
+    <div class="hero">
         <main>
-            <img class="portrait" src="./assets/images/portrait-placeholder.svg" alt="" width="240" height="300">
-            <div class="profile">
-                <section id="introduction" aria-label="About me">
-                    <p>I’m a technology cadet in Newcastle, Australia. At work I build workflows for modernising legacy software, and at uni I study computer science and data science.</p>
-                </section>
-                <section>
-                    <h2>Technical Interests</h2>
-                    <ul class="interests" role="list">
-                        <li>Software Engineering</li>
-                        <li>Artificial Intelligence</li>
-                        <li>Systems &amp; Infrastructure</li>
-                        <li>Financial Technology</li>
-                    </ul>
-                </section>
+            <div class="intro-layout">
+                <div class="intro-content">
+                    <img class="portrait" src="./assets/images/portrait-placeholder.svg" alt="" width="320" height="400">
+                    <div class="profile">
+                        <section id="introduction" aria-label="About me">
+                            <p>Technology professional in Newcastle, Australia, currently undertaking a cadetship at a bank and studying Computer Science and Data Science, majoring in AI. I would describe myself as a critical thinker, and as an optimiser.</p>
+                        </section>
+                        <section>
+                            <h2>Technical Interests</h2>
+                            <ul class="interests" role="list">
+                                <li>Software Engineering</li>
+                                <li>Artificial Intelligence</li>
+                                <li>Systems &amp; Infrastructure</li>
+                                <li>Financial Technology</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <section id="experience">
+                        <h2>Experience</h2>
+                        <h3>Technology Cadet · <a href="https://www.ngmgroup.com.au/">Newcastle Greater Mutual Group</a></h3>
+                        <p><time datetime="2025-09">September 2025</time> – present · Newcastle, NSW</p>
+                        <p>Two-year cadetship across technology teams. Selected work from each rotation:</p>
+                        <ul>
+                            <li><strong>IT Service Desk:</strong> work included setting up shared project folders and group access permissions.</li>
+                            <li><strong>Cybersecurity:</strong> contributed to cyber awareness activities and phishing simulations using Microsoft Defender.</li>
+                            <li><strong>Platforms &amp; Programming:</strong> designed and ran a legacy modernisation workflow using deterministic analysis and the GitHub Copilot SDK; configured tooling including GitHub Actions, Advanced Security, repository rulesets and Codespaces.</li>
+                            <li><strong>Data &amp; Analytics:</strong> upcoming rotation.</li>
+                        </ul>
+                    </section>
+                </div>
             </div>
-            <section id="experience">
-                <h2>Experience</h2>
-                <h3>Technology Cadet · <a href="https://www.ngmgroup.com.au/">Newcastle Greater Mutual Group</a></h3>
-                <p><time datetime="2025-09">September 2025</time> – present · Newcastle, NSW</p>
-                <p>My two-year cadetship takes me through technology teams in financial services.</p>
-                <ol class="rotations">
-                    <li><strong>IT Service Desk.</strong> I set up shared project folders and configured file permissions for the groups that needed access.</li>
-                    <li><strong>Platforms &amp; Programming.</strong> I designed and ran a workflow for modernising legacy software. I used deterministic analysis to extract the existing system’s behaviour, then used the GitHub Copilot SDK to generate code from that analysis.
-                        <p>I wrote Jira tickets for the work, set up GitHub Actions workflows, and configured GitHub Advanced Security and repository rulesets. I used GitHub Codespaces to give developers a consistent environment.</p>
-                        <p>On this project and in my own repositories, I use Open Knowledge Format to keep one authoritative document for each topic. When an instruction applies in several places, I link back to it so there’s one place to update it.</p>
-                    </li>
-                    <li><strong>Data &amp; Analytics.</strong> My next rotation.</li>
-                </ol>
-            </section>
             <section id="projects">
                 <h2>Projects</h2>
-                <h3>Learning to classify four interlocking spirals</h3>
-                <p>For a university machine learning project, I tested whether a model could tell which spiral a point belongs to from its coordinates alone. I generated 150 points on each of four spirals and trained a PyTorch neural network and a support vector machine in Python. For the support vector machine, I chose a radial basis function kernel and tuned it with five-fold cross-validation.</p>
-                <p>Both models correctly classified all 600 training points. Plotting their predictions across a grid let me see where they placed the boundaries in the gaps between the samples.</p>
+                <h3>Spiral classification · ANN &amp; SVM</h3>
+                <ul>
+                    <li>Trained an artificial neural network (ANN) and a support vector machine (SVM) in Python, using PyTorch for the ANN.</li>
+                    <li>Tuned the SVM’s RBF kernel with five-fold cross-validation.</li>
+                    <li>Both models achieved <strong>100% training accuracy on 600 points</strong>; visualised their decision boundaries.</li>
+                </ul>
                 <figure>
-                    <a href="./assets/projects/four-spirals-neural-network.png"><img src="./assets/projects/four-spirals-neural-network.png" width="320" height="357" loading="lazy" alt="Neural network predictions form four winding bands around the labelled spiral points."></a>
-                    <a href="./assets/projects/four-spirals-svm.png"><img src="./assets/projects/four-spirals-svm.png" width="320" height="357" loading="lazy" alt="Support vector machine predictions follow the same four spirals, with different boundaries between samples."></a>
-                    <figcaption>The neural network has three hidden layers of 32 units each. The second plot shows the support vector machine on the same coordinates. Markers show the known classes and shading shows each model’s predictions.</figcaption>
+                    <img src="./assets/projects/four-spirals-neural-network.png" width="320" height="357" loading="lazy" alt="Neural network predictions form four winding bands around the labelled spiral points.">
+                    <img src="./assets/projects/four-spirals-svm.png" width="320" height="357" loading="lazy" alt="Support vector machine predictions follow the same four spirals, with different boundaries between samples.">
+                    <figcaption>ANN, then SVM. Dots: labelled samples. Shading: predictions.</figcaption>
                 </figure>
-                <h3>Food image classifier</h3>
-                <p>For a university group project, we built a smart fridge classifier to recognise 40 food categories from photographs. I took supermarket photos for the dataset and compared a convolutional neural network trained from scratch with a pretrained ResNet adapted to the same categories.</p>
-                <p>I tuned the models using a validation split. Alongside overall accuracy, we measured accuracy for each food category so we could see which foods the models struggled to recognise.</p>
+                <h3>Food image classifier · CNN, ResNet</h3>
+                <ul>
+                    <li>Contributed to a university team classifier for <strong>40 food categories</strong>.</li>
+                    <li>Collected supermarket photos and compared a CNN trained from scratch with a pretrained ResNet.</li>
+                    <li>Tuned models on a validation split; the team evaluated overall and per-category accuracy.</li>
+                </ul>
                 <h3>Other university projects</h3>
                 <ul>
-                    <li><strong>Data preparation pipeline</strong> — I cleaned electricity demand data from five Australian states and used principal component analysis to summarise variation across features.</li>
-                    <li><strong>CPU scheduling simulator</strong> — I implemented four scheduling algorithms in Java and compared how long processes waited under each policy.</li>
-                    <li><strong>Synchronisation problems</strong> — I used semaphores to coordinate access to a shared bridge and implemented timed waits in the Nachos operating system.</li>
-                    <li><strong>TuneTown 2</strong> — I built a PHP music catalogue that generates genre pages from XML and accepts second-hand album submissions.</li>
-                    <li><strong>Spambase</strong> — I clustered 4,601 emails by word use and capitalisation, then compared the groups with their spam labels.</li>
-                    <li><strong>Virtual memory simulator</strong> — I simulated demand paging in Java to track page faults and the cost of writing modified pages back to disk.</li>
+                    <li><strong>Data pipeline:</strong> cleaned electricity demand data from five states; applied principal component analysis.</li>
+                    <li><strong>CPU scheduling:</strong> implemented four algorithms in Java and compared process wait times.</li>
+                    <li><strong>Synchronisation:</strong> coordinated shared access with semaphores; implemented timed waits in Nachos.</li>
+                    <li><strong>TuneTown 2:</strong> built a PHP/XML music catalogue with album submissions.</li>
+                    <li><strong>Spambase:</strong> clustered 4,601 emails and compared clusters with spam labels.</li>
+                    <li><strong>Virtual memory:</strong> simulated demand paging, page faults and disk writes in Java.</li>
                 </ul>
-                <h3>A repository template for my projects</h3>
-                <p>I built a reusable workspace with Python tools that check Markdown formatting and preview repairs to broken links. <a href="https://github.com/KingManning/repository-template">View the repository template on GitHub</a>.</p>
-                <h3>Personal portfolio website</h3>
-                <p>I built this site with HTML and CSS. Cloudflare Pages deploys it when I push changes to the main branch on GitHub.</p>
-                <p><a href="https://github.com/KingManning/zacharymanning-portfolio">View the portfolio source on GitHub</a></p>
+                <h3>Personal projects</h3>
+                <ul>
+                    <li><strong><a href="https://github.com/KingManning/repository-template">Repository template</a>:</strong> Python tools to check Markdown and preview broken-link repairs.</li>
+                    <li><strong><a href="https://github.com/KingManning/zacharymanning-portfolio">This portfolio</a>:</strong> HTML and CSS, deployed through GitHub and Cloudflare Pages.</li>
+                    <li><strong>Other personal projects:</strong> developing additional projects, with details to be shared at commercial release.</li>
+                </ul>
             </section>
             <section id="education">
-                <h2>Education &amp; Learning</h2>
-                <h3>Computer Science and Data Science</h3>
-                <p>I’m studying a Bachelor of Computer Science and Data Science, majoring in Artificial Intelligence, at the <a href="https://www.newcastle.edu.au/">University of Newcastle</a>. My coursework includes algorithms and data structures, database design with SQL, and statistical learning. I use Python for data analysis and have also studied C++ and Java.</p>
+                <h2>Education &amp; Credentials</h2>
+                <h3>Bachelor of Computer Science and Data Science</h3>
+                <p><a href="https://www.newcastle.edu.au/">University of Newcastle</a> · In progress · Artificial Intelligence major</p>
+                <ul>
+                    <li><strong>Selected completed coursework:</strong> algorithms, data structures, database management, machine intelligence, predictive analytics, and data wrangling &amp; visualisation.</li>
+                    <li><strong>Languages studied:</strong> Python, R, C++ and Java.</li>
+                </ul>
                 <h3>Microsoft credentials</h3>
                 <ul>
                     <li><a href="https://learn.microsoft.com/en-us/users/zacmanning-8709/credentials/284d1d6c016167d8">Microsoft Certified: Azure Fundamentals</a></li>
-                    <li><a href="https://learn.microsoft.com/en-us/users/zacmanning-8709/credentials/173a84cf86b14930">Microsoft Applied Skills: Accelerate AI-assisted development by using GitHub Copilot</a></li>
-                    <li><a href="https://learn.microsoft.com/en-us/users/zacmanning-8709/credentials/d453b489c1628e04">Microsoft Applied Skills: Create and manage automated processes by using Power Automate</a></li>
+                    <li><a href="https://learn.microsoft.com/en-us/users/zacmanning-8709/credentials/173a84cf86b14930">GitHub Copilot — Microsoft Applied Skills</a></li>
+                    <li><a href="https://learn.microsoft.com/en-us/users/zacmanning-8709/credentials/d453b489c1628e04">Power Automate — Microsoft Applied Skills</a></li>
                 </ul>
-                <h3>GitHub certification plans</h3>
-                <p>Building on my work with GitHub, I plan to take the certification exams for <a href="https://learn.microsoft.com/en-us/credentials/certifications/github-foundations/">GitHub Foundations</a>, <a href="https://learn.microsoft.com/en-us/credentials/certifications/github-advanced-security/">GitHub Advanced Security</a>, <a href="https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/">GitHub Copilot</a>, and <a href="https://learn.microsoft.com/en-us/credentials/certifications/agentic-ai-developer/">GitHub Certified: Agentic AI Developer</a>.</p>
             </section>
             <section id="outside-work">
                 <h2>Outside work</h2>
-                <p>Outside work and uni, I go to the gym, play volleyball, and enjoy a good film or TV show. Cyberpunk 2077 is my favourite story game so far. My Spotify rotation includes Bring Me the Horizon, FISHER, and Flume.</p>
+                <p>Gym, volleyball, films, gaming and music.</p>
             </section>
         </main>
     </div>
         <footer>
             <div class="footer-content">
-                <a rel="me" href="https://github.com/KingManning">
-                    <img src="./assets/images/GitHub_Invertocat_White.svg" width="30" alt="GitHub">
+                <a class="github-link" rel="me" href="https://github.com/KingManning" aria-label="GitHub">
+                    <span class="github-icon" aria-hidden="true"></span>
                 </a>
                 <a rel="me" href="https://www.linkedin.com/in/zachary-manning-64b93733a/">
                     <img src="./assets/images/InBug-White.png" width="30" alt="LinkedIn">
