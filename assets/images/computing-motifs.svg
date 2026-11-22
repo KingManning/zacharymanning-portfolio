@@ -1,7 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1600" viewBox="0 0 360 1600" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="2680" viewBox="0 0 360 2680" fill="none">
   <defs>
+    <symbol id="uml-sequence" viewBox="0 0 200 140">
+      <title>UML sequence diagram</title>
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.8" stroke-linejoin="round">
+        <path d="M30 30v102 M100 30v102 M170 30v102" stroke-dasharray="4 5" />
+        <rect x="7" y="8" width="46" height="22" rx="2" />
+        <rect x="77" y="8" width="46" height="22" rx="2" />
+        <rect x="147" y="8" width="46" height="22" rx="2" />
+        <rect x="96" y="50" width="8" height="65" fill="#fff" />
+        <rect x="166" y="74" width="8" height="23" fill="#fff" />
+        <path d="M30 50h66 m-7-4 7 4-7 4 M104 74h62 m-7-4 7 4-7 4" stroke="currentColor" />
+        <path d="M166 97h-62 M96 115H30" stroke="var(--secondary)" stroke-dasharray="4 4" />
+        <path d="m111 93-7 4 7 4 m-74 10-7 4 7 4" stroke="var(--secondary)" />
+      </g>
+      <g fill="#465065" font-family="monospace" font-size="12" text-anchor="middle">
+        <text x="30" y="23">User</text><text x="100" y="23">App</text><text x="170" y="23">DB</text>
+      </g>
+    </symbol>
+    <symbol id="c4-containers" viewBox="0 0 200 140">
+      <title>C4 container diagram</title>
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.8" stroke-linejoin="round">
+        <circle cx="20" cy="39" r="8" /><path d="M7 66v-8a13 13 0 0 1 26 0v8z" />
+        <rect x="57" y="7" width="137" height="126" rx="4" stroke-dasharray="5 4" />
+        <rect x="69" y="31" width="54" height="28" rx="3" stroke="currentColor" />
+        <rect x="69" y="91" width="54" height="28" rx="3" stroke="currentColor" />
+        <path d="M33 49h36 m-6-4 6 4-6 4 M96 59v32 m-4-6 4 6 4-6 M123 105h25 m-6-4 6 4-6 4" />
+        <path d="M148 94v24c0 8 34 8 34 0V94" stroke="var(--secondary)" /><ellipse cx="165" cy="94" rx="17" ry="6" stroke="var(--secondary)" />
+      </g>
+      <g fill="#465065" font-family="monospace" font-size="11" text-anchor="middle">
+        <text x="125" y="22">System</text><text x="96" y="49">Web</text><text x="96" y="109">API</text><text x="165" y="115">DB</text>
+      </g>
+    </symbol>
+    <symbol id="finite-state" viewBox="0 0 200 140">
+      <title>Finite-state machine</title>
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.8" stroke-linejoin="round">
+        <path d="M4 85h18 m-6-4 6 4-6 4 M58 85h30 m-6-4 6 4-6 4 M124 85h32 m-6-4 6 4-6 4 M29 71C3 18 77 18 51 71 m-1-8 1 8 7-4" />
+        <circle cx="40" cy="85" r="18" stroke="var(--secondary)" /><circle cx="106" cy="85" r="18" stroke="var(--secondary)" />
+        <circle cx="174" cy="85" r="18" stroke="currentColor" /><circle cx="174" cy="85" r="13" stroke="currentColor" />
+      </g>
+      <g fill="#465065" font-family="monospace" font-size="13" text-anchor="middle">
+        <text x="40" y="90">q0</text><text x="106" y="90">q1</text><text x="174" y="90">q2</text>
+        <text x="40" y="28">0</text><text x="73" y="76">1</text><text x="140" y="76">0</text>
+      </g>
+    </symbol>
+    <symbol id="hash-table" viewBox="0 0 200 140">
+      <title>Hash table with a collision chain</title>
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.8" stroke-linejoin="round">
+        <rect x="48" y="16" width="36" height="108" rx="2" /><path d="M48 43h36 M48 70h36 M48 97h36" />
+        <rect x="111" y="48" width="31" height="18" rx="3" stroke="currentColor" />
+        <rect x="163" y="48" width="31" height="18" rx="3" stroke="currentColor" />
+        <rect x="111" y="102" width="31" height="18" rx="3" stroke="var(--secondary)" />
+        <path d="M84 57h27 m-6-4 6 4-6 4 M142 57h21 m-6-4 6 4-6 4 M84 111h27 m-6-4 6 4-6 4" />
+      </g>
+      <g fill="#465065" font-family="monospace" font-size="12" text-anchor="middle">
+        <text x="28" y="34">0</text><text x="28" y="61">1</text><text x="28" y="88">2</text><text x="28" y="115">3</text>
+        <text x="126" y="61">a</text><text x="178" y="61">b</text><text x="126" y="115">c</text>
+      </g>
+    </symbol>
     <symbol id="binary" viewBox="5 15 130 75">
-      <g fill="#92989f" font-family="monospace" font-size="17" letter-spacing="4">
+      <g fill="var(--line, #93a0b0)" font-family="monospace" font-size="17" letter-spacing="4">
         <text x="12" y="33">01001</text>
         <text x="28" y="58" fill="currentColor">10110</text>
         <text x="12" y="83">00101</text>
@@ -13,31 +70,31 @@
       </g>
     </symbol>
     <symbol id="cicd" viewBox="10 395 140 115">
-      <g stroke="#92989f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
         <path d="m49 407-13 12 13 12 m62-24 13 12-13 12 m-26-26-10 28" stroke="currentColor" />
         <path d="M80 441v15 M24 473h112 M24 473v27h112v-17 m-4 4 4-4 4 4" />
         <circle cx="24" cy="473" r="10" fill="#fff" />
         <circle cx="80" cy="473" r="10" fill="#fff" />
         <circle cx="136" cy="473" r="10" fill="#fff" />
-        <path d="m75 473 3 3 6-7 M132 476l4-7 4 7" stroke="#91d943" />
+        <path d="m75 473 3 3 6-7 M132 476l4-7 4 7" stroke="var(--secondary, #b29530)" />
         <path d="M20 469h8v8h-8z" />
       </g>
     </symbol>
     <symbol id="regex" viewBox="10 115 140 32">
-      <g stroke="#b4b9bf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--secondary, #a9b4c3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M27 121 17 131 27 141 M133 121 143 131 133 141" />
       </g>
-      <g fill="#353a40" font-family="monospace" font-size="16">
+      <g fill="currentColor" font-family="monospace" font-size="16">
         <text x="36" y="137">[01]+</text>
       </g>
     </symbol>
     <symbol id="grammar" viewBox="8 150 145 28">
-      <g fill="#353a40" font-family="monospace" font-size="16">
+      <g fill="currentColor" font-family="monospace" font-size="16">
         <text x="13" y="170" font-size="14">S → aS | b</text>
       </g>
     </symbol>
     <symbol id="queue" viewBox="0 545 160 45">
-      <g stroke="#92989f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M28 552h104 M28 582h104 M54 552v30 M80 552v30 M106 552v30 M5 567h16 m-5-4 5 4-5 4 M139 567h16 m-5-4 5 4-5 4" />
       </g>
       <g fill="currentColor" font-family="monospace" font-size="14">
@@ -53,7 +110,7 @@
       </g>
     </symbol>
     <symbol id="linked-list" viewBox="0 320 160 40">
-      <g stroke="#92989f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="5" y="326" width="36" height="28" rx="4" />
         <path d="M28 326v28 M41 340h16 m-5-4 5 4-5 4" />
         <rect x="60" y="326" width="36" height="28" rx="4" />
@@ -68,8 +125,8 @@
       </g>
     </symbol>
     <symbol id="matrix" viewBox="0 0 100 98">
-      <path d="M16 6H6v86h10 M84 6h10v86H84" stroke="#92989f" stroke-width="1.5" stroke-linecap="round" />
-      <g fill="#353a40" font-family="monospace" font-size="18" text-anchor="middle">
+      <path d="M16 6H6v86h10 M84 6h10v86H84" stroke="var(--line, #93a0b0)" stroke-width="1.5" stroke-linecap="round" />
+      <g fill="#465065" font-family="monospace" font-size="18" text-anchor="middle">
         <text x="26" y="29" fill="currentColor">1</text>
         <text x="50" y="29">0</text>
         <text x="74" y="29">0</text>
@@ -82,14 +139,14 @@
       </g>
     </symbol>
     <symbol id="cpu" viewBox="34 743 92 92">
-      <g stroke="#92989f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="49" y="758" width="62" height="62" rx="5" />
         <rect x="62" y="771" width="36" height="36" rx="3" stroke="currentColor" />
         <path d="M61 748v10 M80 748v10 M99 748v10 M61 820v10 M80 820v10 M99 820v10 M39 770h10 M39 789h10 M39 808h10 M111 770h10 M111 789h10 M111 808h10" />
       </g>
     </symbol>
     <symbol id="membership" viewBox="25 250 32 34">
-      <g fill="#92989f" font-family="Georgia, serif">
+      <g fill="var(--line, #93a0b0)" font-family="Georgia, serif">
         <text x="30" y="275" font-size="25" fill="currentColor">∈</text>
       </g>
     </symbol>
@@ -99,14 +156,14 @@
       </g>
     </symbol>
     <symbol id="lock" viewBox="54 1061 52 67">
-      <g stroke="#92989f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="60" y="1091" width="40" height="31" rx="5" />
         <path d="M68 1091v-10a12 12 0 0 1 24 0v10 M80 1105v7" />
         <circle cx="80" cy="1102" r="3" fill="currentColor" stroke="none" />
       </g>
     </symbol>
     <symbol id="logic-gate" viewBox="8 975 140 65">
-      <g stroke="#92989f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
         <path d="M55 982h24a25 25 0 0 1 0 50H55z M20 994h35 M20 1020h35 M104 1007h36" />
         <circle cx="16" cy="994" r="3" fill="currentColor" stroke="none" />
         <circle cx="16" cy="1020" r="3" fill="currentColor" stroke="none" />
@@ -118,7 +175,7 @@
       </g>
     </symbol>
     <symbol id="memory" viewBox="18 865 125 80">
-      <g stroke="#92989f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="24" y="884" width="34" height="47" rx="3" />
         <path d="M30 896h22 M30 905h16 M30 914h20 M58 908h34 m-5-4 5 4-5 4" />
         <rect x="95" y="871" width="42" height="68" rx="3" />
@@ -131,7 +188,7 @@
       </g>
     </symbol>
     <symbol id="process" viewBox="2 1155 153 33">
-      <g stroke="#92989f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--line, #93a0b0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="8" y="1161" width="48" height="21" rx="10" />
         <path d="M60 1171h36 m-5-4 5 4-5 4" />
         <rect x="101" y="1161" width="48" height="21" rx="10" />
@@ -139,13 +196,13 @@
     </symbol>
     <symbol id="spirals" viewBox="0 0 120 120">
       <path d="M63.00 60.00 L63.24 60.20 L63.47 60.43 L63.69 60.68 L63.88 60.97 L64.05 61.28 L64.20 61.61 L64.32 61.97 L64.41 62.35 L64.48 62.74 L64.51 63.15 L64.50 63.58 L64.46 64.01 L64.38 64.46 L64.26 64.91 L64.11 65.36 L63.91 65.80 L63.68 66.25 L63.40 66.68 L63.09 67.11 L62.74 67.52 L62.34 67.91 L61.91 68.28 L61.44 68.63 L60.94 68.95 L60.40 69.24 L59.83 69.50 L59.24 69.72 L58.61 69.90 L57.96 70.04 L57.28 70.14 L56.59 70.19 L55.88 70.20 L55.16 70.15 L54.42 70.06 L53.69 69.91 L52.95 69.71 L52.21 69.45 L51.48 69.14 L50.75 68.78 L50.04 68.36 L49.35 67.88 L48.68 67.35 L48.03 66.77 L47.42 66.14 L46.83 65.45 L46.29 64.72 L45.79 63.94 L45.33 63.12 L44.92 62.25 L44.56 61.35 L44.26 60.41 L44.01 59.44 L43.82 58.44 L43.70 57.42 L43.65 56.37 L43.66 55.31 L43.74 54.24 L43.89 53.16 L44.11 52.08 L44.41 51.00 L44.78 49.93 L45.23 48.87 L45.74 47.82 L46.33 46.80 L46.99 45.81 L47.73 44.85 L48.53 43.92 L49.40 43.04 L50.34 42.20 L51.34 41.42 L52.40 40.69 L53.51 40.03 L54.68 39.43 L55.90 38.90 L57.16 38.44 L58.47 38.05 L59.81 37.75 L61.18 37.53 L62.58 37.40 L63.99 37.35 L65.43 37.39 L66.87 37.53 L68.32 37.75 L69.76 38.07 L71.20 38.49 L72.62 39.00 L74.02 39.60 L75.39 40.30 L76.73 41.09 L78.03 41.97 L79.29 42.94 L80.49 43.99 L81.63 45.13 L82.71 46.35 L83.73 47.65 L84.67 49.02 L85.52 50.46 L86.30 51.96 L86.98 53.52 L87.57 55.14 L88.07 56.80 L88.46 58.51 L88.75 60.25 L88.93 62.02 L89.00 63.82 L88.96 65.63 L88.80 67.45 L88.53 69.27 L88.15 71.09 L87.64 72.89 L87.02 74.67 L86.29 76.43 L85.44 78.15 L84.48 79.82 L83.41 81.45 L82.23 83.02 L80.94 84.52 L79.56 85.96 L78.08 87.31 L76.50 88.58 L74.84 89.76 L73.09 90.84 L71.27 91.81 L69.37 92.68 L67.41 93.44 L65.40 94.08 L63.33 94.59 L61.22 94.98 L59.08 95.24 L56.91 95.36 L54.72 95.36 L52.52 95.21 L50.31 94.93 L48.12 94.51 L45.94 93.95 L43.78 93.26 L41.66 92.42 L39.58 91.45 L37.55 90.35 L35.57 89.11 L33.67 87.75 L31.84 86.26 L30.10 84.65 L28.45 82.92 L26.90 81.09 L25.45 79.15 L24.12 77.11 L22.91 74.98 L21.83 72.77 L20.88 70.48 L20.07 68.12 L19.40 65.71 L18.88 63.24 L18.51 60.72 L18.29 58.18 L18.23 55.61 L18.33 53.03 L18.59 50.44 L19.01 47.86 L19.59 45.29 L20.34 42.75 L21.24 40.25 L22.30 37.80 L23.52 35.40 L24.89 33.06 L26.42 30.81 L28.08 28.63 L29.89 26.56 L31.83 24.59 L33.90 22.73 L36.10 20.99 L38.40 19.38 L40.82 17.91 L43.34 16.59 L45.94 15.41 L48.63 14.40 L51.39 13.54 L54.21 12.85 L57.08 12.34 L60.00 12.00" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-      <path d="M57.00 60.00 L56.76 59.80 L56.53 59.57 L56.31 59.32 L56.12 59.03 L55.95 58.72 L55.80 58.39 L55.68 58.03 L55.59 57.65 L55.52 57.26 L55.49 56.85 L55.50 56.42 L55.54 55.99 L55.62 55.54 L55.74 55.09 L55.89 54.64 L56.09 54.20 L56.32 53.75 L56.60 53.32 L56.91 52.89 L57.26 52.48 L57.66 52.09 L58.09 51.72 L58.56 51.37 L59.06 51.05 L59.60 50.76 L60.17 50.50 L60.76 50.28 L61.39 50.10 L62.04 49.96 L62.72 49.86 L63.41 49.81 L64.12 49.80 L64.84 49.85 L65.58 49.94 L66.31 50.09 L67.05 50.29 L67.79 50.55 L68.52 50.86 L69.25 51.22 L69.96 51.64 L70.65 52.12 L71.32 52.65 L71.97 53.23 L72.58 53.86 L73.17 54.55 L73.71 55.28 L74.21 56.06 L74.67 56.88 L75.08 57.75 L75.44 58.65 L75.74 59.59 L75.99 60.56 L76.18 61.56 L76.30 62.58 L76.35 63.63 L76.34 64.69 L76.26 65.76 L76.11 66.84 L75.89 67.92 L75.59 69.00 L75.22 70.07 L74.77 71.13 L74.26 72.18 L73.67 73.20 L73.01 74.19 L72.27 75.15 L71.47 76.08 L70.60 76.96 L69.66 77.80 L68.66 78.58 L67.60 79.31 L66.49 79.97 L65.32 80.57 L64.10 81.10 L62.84 81.56 L61.53 81.95 L60.19 82.25 L58.82 82.47 L57.42 82.60 L56.01 82.65 L54.57 82.61 L53.13 82.47 L51.68 82.25 L50.24 81.93 L48.80 81.51 L47.38 81.00 L45.98 80.40 L44.61 79.70 L43.27 78.91 L41.97 78.03 L40.71 77.06 L39.51 76.01 L38.37 74.87 L37.29 73.65 L36.27 72.35 L35.33 70.98 L34.48 69.54 L33.70 68.04 L33.02 66.48 L32.43 64.86 L31.93 63.20 L31.54 61.49 L31.25 59.75 L31.07 57.98 L31.00 56.18 L31.04 54.37 L31.20 52.55 L31.47 50.73 L31.85 48.91 L32.36 47.11 L32.98 45.33 L33.71 43.57 L34.56 41.85 L35.52 40.18 L36.59 38.55 L37.77 36.98 L39.06 35.48 L40.44 34.04 L41.92 32.69 L43.50 31.42 L45.16 30.24 L46.91 29.16 L48.73 28.19 L50.63 27.32 L52.59 26.56 L54.60 25.92 L56.67 25.41 L58.78 25.02 L60.92 24.76 L63.09 24.64 L65.28 24.64 L67.48 24.79 L69.69 25.07 L71.88 25.49 L74.06 26.05 L76.22 26.74 L78.34 27.58 L80.42 28.55 L82.45 29.65 L84.43 30.89 L86.33 32.25 L88.16 33.74 L89.90 35.35 L91.55 37.08 L93.10 38.91 L94.55 40.85 L95.88 42.89 L97.09 45.02 L98.17 47.23 L99.12 49.52 L99.93 51.88 L100.60 54.29 L101.12 56.76 L101.49 59.28 L101.71 61.82 L101.77 64.39 L101.67 66.97 L101.41 69.56 L100.99 72.14 L100.41 74.71 L99.66 77.25 L98.76 79.75 L97.70 82.20 L96.48 84.60 L95.11 86.94 L93.58 89.19 L91.92 91.37 L90.11 93.44 L88.17 95.41 L86.10 97.27 L83.90 99.01 L81.60 100.62 L79.18 102.09 L76.66 103.41 L74.06 104.59 L71.37 105.60 L68.61 106.46 L65.79 107.15 L62.92 107.66 L60.00 108.00" stroke="#92989f" stroke-width="1.7" stroke-linecap="round" />
+      <path d="M57.00 60.00 L56.76 59.80 L56.53 59.57 L56.31 59.32 L56.12 59.03 L55.95 58.72 L55.80 58.39 L55.68 58.03 L55.59 57.65 L55.52 57.26 L55.49 56.85 L55.50 56.42 L55.54 55.99 L55.62 55.54 L55.74 55.09 L55.89 54.64 L56.09 54.20 L56.32 53.75 L56.60 53.32 L56.91 52.89 L57.26 52.48 L57.66 52.09 L58.09 51.72 L58.56 51.37 L59.06 51.05 L59.60 50.76 L60.17 50.50 L60.76 50.28 L61.39 50.10 L62.04 49.96 L62.72 49.86 L63.41 49.81 L64.12 49.80 L64.84 49.85 L65.58 49.94 L66.31 50.09 L67.05 50.29 L67.79 50.55 L68.52 50.86 L69.25 51.22 L69.96 51.64 L70.65 52.12 L71.32 52.65 L71.97 53.23 L72.58 53.86 L73.17 54.55 L73.71 55.28 L74.21 56.06 L74.67 56.88 L75.08 57.75 L75.44 58.65 L75.74 59.59 L75.99 60.56 L76.18 61.56 L76.30 62.58 L76.35 63.63 L76.34 64.69 L76.26 65.76 L76.11 66.84 L75.89 67.92 L75.59 69.00 L75.22 70.07 L74.77 71.13 L74.26 72.18 L73.67 73.20 L73.01 74.19 L72.27 75.15 L71.47 76.08 L70.60 76.96 L69.66 77.80 L68.66 78.58 L67.60 79.31 L66.49 79.97 L65.32 80.57 L64.10 81.10 L62.84 81.56 L61.53 81.95 L60.19 82.25 L58.82 82.47 L57.42 82.60 L56.01 82.65 L54.57 82.61 L53.13 82.47 L51.68 82.25 L50.24 81.93 L48.80 81.51 L47.38 81.00 L45.98 80.40 L44.61 79.70 L43.27 78.91 L41.97 78.03 L40.71 77.06 L39.51 76.01 L38.37 74.87 L37.29 73.65 L36.27 72.35 L35.33 70.98 L34.48 69.54 L33.70 68.04 L33.02 66.48 L32.43 64.86 L31.93 63.20 L31.54 61.49 L31.25 59.75 L31.07 57.98 L31.00 56.18 L31.04 54.37 L31.20 52.55 L31.47 50.73 L31.85 48.91 L32.36 47.11 L32.98 45.33 L33.71 43.57 L34.56 41.85 L35.52 40.18 L36.59 38.55 L37.77 36.98 L39.06 35.48 L40.44 34.04 L41.92 32.69 L43.50 31.42 L45.16 30.24 L46.91 29.16 L48.73 28.19 L50.63 27.32 L52.59 26.56 L54.60 25.92 L56.67 25.41 L58.78 25.02 L60.92 24.76 L63.09 24.64 L65.28 24.64 L67.48 24.79 L69.69 25.07 L71.88 25.49 L74.06 26.05 L76.22 26.74 L78.34 27.58 L80.42 28.55 L82.45 29.65 L84.43 30.89 L86.33 32.25 L88.16 33.74 L89.90 35.35 L91.55 37.08 L93.10 38.91 L94.55 40.85 L95.88 42.89 L97.09 45.02 L98.17 47.23 L99.12 49.52 L99.93 51.88 L100.60 54.29 L101.12 56.76 L101.49 59.28 L101.71 61.82 L101.77 64.39 L101.67 66.97 L101.41 69.56 L100.99 72.14 L100.41 74.71 L99.66 77.25 L98.76 79.75 L97.70 82.20 L96.48 84.60 L95.11 86.94 L93.58 89.19 L91.92 91.37 L90.11 93.44 L88.17 95.41 L86.10 97.27 L83.90 99.01 L81.60 100.62 L79.18 102.09 L76.66 103.41 L74.06 104.59 L71.37 105.60 L68.61 106.46 L65.79 107.15 L62.92 107.66 L60.00 108.00" stroke="var(--line, #93a0b0)" stroke-width="1.7" stroke-linecap="round" />
     </symbol>
     <symbol id="pythagoras" viewBox="0 0 160 140">
-      <path d="M24 12V92h112" stroke="#92989f" stroke-width="1.6" stroke-linejoin="round" />
+      <path d="M24 12V92h112" stroke="var(--line, #93a0b0)" stroke-width="1.6" stroke-linejoin="round" />
       <path d="M24 12 136 92" stroke="currentColor" stroke-width="2" />
-      <path d="M24 79h13v13" stroke="#383c42" stroke-width="1.3" />
-      <g fill="#383c42" font-family="Georgia, serif" font-size="16" font-style="italic">
+      <path d="M24 79h13v13" stroke="#465065" stroke-width="1.3" />
+      <g fill="#465065" font-family="Georgia, serif" font-size="16" font-style="italic">
         <text x="8" y="57">a</text>
         <text x="76" y="112">b</text>
         <text x="85" y="43">c</text>
@@ -153,24 +210,29 @@
       <text x="20" y="136" fill="currentColor" font-family="Georgia, serif" font-size="19">a² + b² = c²</text>
     </symbol>
   </defs>
-  <use href="#binary" x="22" y="30" width="125" height="78" color="#383c42" />
-  <use href="#sum" x="265" y="38" width="42" height="52" color="#e56669" />
-  <use href="#cicd" x="186" y="145" width="145" height="119" color="#e56669" />
-  <use href="#regex" x="20" y="184" width="135" height="31" color="#383c42" />
-  <use href="#grammar" x="130" y="310" width="146" height="28" color="#383c42" />
-  <use href="#queue" x="16" y="385" width="153" height="43" color="#a5ed58" />
-  <use href="#infinity" x="277" y="403" width="44" height="39" color="#e56669" />
-  <use href="#linked-list" x="174" y="492" width="163" height="41" color="#a5ed58" />
-  <use href="#matrix" x="28" y="540" width="100" height="98" color="#e56669" />
-  <use href="#cpu" x="230" y="623" width="99" height="99" color="#e56669" />
-  <use href="#membership" x="43" y="716" width="32" height="34" color="#a5ed58" />
-  <use href="#stack" x="111" y="792" width="78" height="105" color="#383c42" />
-  <use href="#lock" x="270" y="875" width="55" height="71" color="#a5ed58" />
-  <use href="#logic-gate" x="18" y="962" width="140" height="65" color="#e56669" />
-  <use href="#algebra" x="195" y="1051" width="138" height="41" color="#383c42" />
-  <use href="#memory" x="35" y="1140" width="130" height="83" color="#a5ed58" />
-  <use href="#union" x="273" y="1340" width="34" height="38" color="#e56669" />
-  <use href="#process" x="86" y="1470" width="155" height="33" color="#383c42" />
-  <use href="#spirals" x="20" y="252" width="95" height="95" color="#a5ed58" />
-  <use href="#pythagoras" x="190" y="1130" width="148" height="130" color="#e56669" />
+  <!-- Full-width technical diagrams interspersed with the smaller motifs. -->
+  <use href="#uml-sequence" x="16" y="12" width="328" height="230" color="#e34052" style="--line: #d56470; --secondary: #20a45b" />
+  <use href="#binary" x="22" y="300" width="125" height="78" color="#9046dc" style="--line: #9b6acb; --secondary: #e5b914" />
+  <use href="#sum" x="265" y="308" width="42" height="52" color="#e5b914" style="--line: #cba62b; --secondary: #9046dc" />
+  <use href="#cicd" x="186" y="415" width="145" height="119" color="#f18a1b" style="--line: #df943e; --secondary: #2478e0" />
+  <use href="#regex" x="20" y="454" width="135" height="31" color="#2478e0" style="--line: #5288ce; --secondary: #f18a1b" />
+  <use href="#spirals" x="20" y="522" width="95" height="95" color="#20a45b" style="--line: #4d9f71; --secondary: #e34052" />
+  <use href="#grammar" x="130" y="580" width="146" height="28" color="#9046dc" style="--line: #9b6acb; --secondary: #e5b914" />
+  <use href="#queue" x="16" y="655" width="153" height="43" color="#2478e0" style="--line: #5288ce; --secondary: #f18a1b" />
+  <use href="#infinity" x="277" y="673" width="44" height="39" color="#f18a1b" style="--line: #df943e; --secondary: #2478e0" />
+  <use href="#c4-containers" x="16" y="742" width="328" height="230" color="#9046dc" style="--line: #9b6acb; --secondary: #e5b914" />
+  <use href="#linked-list" x="174" y="1032" width="163" height="41" color="#20a45b" style="--line: #4d9f71; --secondary: #e34052" />
+  <use href="#matrix" x="28" y="1080" width="100" height="98" color="#2478e0" style="--line: #5288ce; --secondary: #f18a1b" />
+  <use href="#cpu" x="230" y="1163" width="99" height="99" color="#f18a1b" style="--line: #df943e; --secondary: #2478e0" />
+  <use href="#membership" x="43" y="1256" width="32" height="34" color="#e34052" style="--line: #d56470; --secondary: #20a45b" />
+  <use href="#stack" x="111" y="1332" width="78" height="105" color="#e5b914" style="--line: #cba62b; --secondary: #9046dc" />
+  <use href="#lock" x="270" y="1415" width="55" height="71" color="#2478e0" style="--line: #5288ce; --secondary: #f18a1b" />
+  <use href="#logic-gate" x="18" y="1502" width="140" height="65" color="#9046dc" style="--line: #9b6acb; --secondary: #e5b914" />
+  <use href="#finite-state" x="16" y="1592" width="328" height="230" color="#20a45b" style="--line: #4d9f71; --secondary: #e34052" />
+  <use href="#algebra" x="195" y="1861" width="138" height="41" color="#f18a1b" style="--line: #df943e; --secondary: #2478e0" />
+  <use href="#pythagoras" x="190" y="1940" width="148" height="130" color="#e5b914" style="--line: #cba62b; --secondary: #9046dc" />
+  <use href="#memory" x="35" y="1950" width="130" height="83" color="#9046dc" style="--line: #9b6acb; --secondary: #e5b914" />
+  <use href="#union" x="273" y="2150" width="34" height="38" color="#2478e0" style="--line: #5288ce; --secondary: #f18a1b" />
+  <use href="#hash-table" x="16" y="2222" width="328" height="230" color="#9046dc" style="--line: #9b6acb; --secondary: #e5b914" />
+  <use href="#process" x="86" y="2550" width="155" height="33" color="#e34052" style="--line: #d56470; --secondary: #20a45b" />
 </svg>

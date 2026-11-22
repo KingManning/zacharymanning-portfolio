@@ -75,7 +75,7 @@ a:visited {
 }
 a:link:active,
 a:visited:active {
-  color: #FF0000;
+  color: #20a45b;
 }
 ul {
   list-style-type: disc;
@@ -96,8 +96,9 @@ li {
 }
 
 /* Content specific styles */
-a:hover {
-    color:chocolate;
+a:hover,
+a:focus-visible {
+    color: #20a45b;
 }
 body {
     line-height: 1.2;
@@ -113,6 +114,8 @@ body {
     margin-inline: auto;
 }
 .hero {
+    width: 100%;
+    max-width: none;
     margin-bottom: 25px;
 }
 header {
@@ -150,6 +153,7 @@ header {
     font-weight: bold;
 }
 main {
+    --content-width: min(56rem, calc(100% - 2rem));
     position: relative;
     display: flow-root;
     padding-block-start: 2rem;
@@ -171,6 +175,11 @@ main::before, main::after {
     display: none;
     pointer-events: none;
 }
+/* Keep every content block on the same central track. */
+main > .intro-layout, main > section {
+    width: var(--content-width);
+    margin-inline: auto;
+}
 main > section, .intro-content > section {
     max-width: 56rem;
     margin-inline: auto;
@@ -184,6 +193,17 @@ section p + p {
 }
 section ul:not(.interests) li + li {
     margin-block-start: 0.5rem;
+}
+.assignments {
+    padding-inline-start: 1.5rem;
+}
+.assignments > li > ul {
+    list-style-type: circle;
+    margin-block: 0.4rem 0;
+    padding-inline-start: 1.5rem;
+}
+section ul.assignments > li + li {
+    margin-block-start: 1rem;
 }
 .interests {
     display: flex;
@@ -220,26 +240,39 @@ section ul:not(.interests) li + li {
     gap: 1rem;
     justify-self: end;
 }
-.github-link {
+.github-link, .linkedin-link {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.github-link {
     border-radius: 50%;
 }
-.github-link:link, .github-link:visited {
+.github-link:link, .github-link:visited,
+.linkedin-link:link, .linkedin-link:visited {
     color: #000;
 }
-.github-icon {
+.github-icon, .linkedin-icon {
     display: block;
     width: 30px;
     height: 30px;
     background-color: currentColor;
+}
+.github-icon {
     mask: url("../images/GitHub_Invertocat_Black.svg") center / contain no-repeat;
 }
-footer .github-link:link, footer .github-link:visited {
+.linkedin-icon {
+    mask: url("../images/LinkedIn_InBug.svg") center / contain no-repeat;
+}
+footer .github-link:link, footer .github-link:visited,
+footer .linkedin-link:link, footer .linkedin-link:visited {
     color: #fff;
 }
-.github-link:hover, .github-link:focus-visible,
-footer .github-link:hover, footer .github-link:focus-visible {
-    color: #e24850;
+.github-link:hover, .github-link:focus-visible, .github-link:active,
+.linkedin-link:hover, .linkedin-link:focus-visible, .linkedin-link:active,
+footer .github-link:hover, footer .github-link:focus-visible, footer .github-link:active,
+footer .linkedin-link:hover, footer .linkedin-link:focus-visible, footer .linkedin-link:active {
+    color: #20a45b;
 }
 .github-link:focus-visible {
     outline: 2px solid currentColor;
@@ -263,39 +296,36 @@ footer {
     font-size: clamp(0.5rem, 3vw, 1rem);
 }
 
-/* Artwork starts below the header; dividers sit 3rem outside the text. */
-@media (min-width: 84rem) {
+/* Reserve two side gutters before showing artwork. This also covers laptop
+   viewports reduced by display scaling. Small screens keep content only. */
+@media (min-width: 48rem) {
+    main {
+        --content-width: min(56rem, calc(100% - 18rem));
+        --artwork-gap: clamp(1rem, 2vw, 3rem);
+    }
     main::before, main::after {
         display: block;
         position: absolute;
         top: 0;
         bottom: 0;
         box-sizing: border-box;
-        width: calc((100vw - 56rem) / 2 - 4rem);
+        width: calc((100% - var(--content-width)) / 2 - var(--artwork-gap) - 1rem);
         background-repeat: repeat-y;
         background-size: 100% auto;
         background-origin: content-box;
         background-clip: content-box;
     }
     main::before {
-        left: calc(50% - 50vw + 1rem);
-        padding-right: 1.25rem;
+        left: 1rem;
+        padding-right: 0.75rem;
         border-right: 1px solid #e0e3e6;
-        background-image: url("../images/computing-motifs.svg");
+        background-image: url("../images/computing-motifs.svg?v=20261123-link-colour");
     }
     main::after {
-        right: calc(50% - 50vw + 1rem);
-        padding-left: 1.25rem;
+        right: 1rem;
+        padding-left: 0.75rem;
         border-left: 1px solid #e0e3e6;
-        background-image: url("../images/ai-motifs.svg");
-    }
-}
-
-/* Tile across very wide gutters without enlarging the individual symbols. */
-@media (min-width: 140rem) {
-    main::before, main::after {
-        background-size: 50% auto;
-        background-repeat: repeat;
+        background-image: url("../images/ai-motifs.svg?v=20261123-link-colour");
     }
 }
 
@@ -311,17 +341,23 @@ footer {
         margin: 0;
         justify-self: center;
     }
-    .hero, .header-content, .footer-content {
+    .header-content, .footer-content {
         width: calc(100% - 2rem);
     }
     .portrait {
         margin-inline-start: 1rem;
     }
+}
+/* Let the interest circles use the full text column beside narrow gutters. */
+@media (max-width: 64rem) {
     .profile > section + section {
         clear: both;
     }
 }
 @media print {
+    main {
+        --content-width: min(56rem, calc(100% - 2rem));
+    }
     main::before, main::after {
         display: none;
     }

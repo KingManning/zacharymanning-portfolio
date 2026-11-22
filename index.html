@@ -6,7 +6,7 @@
     <title>Zachary Manning</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css?v=20261121-spacing">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css?v=20261123-link-colour">
 </head>
 <body>
     <header>
@@ -17,8 +17,8 @@
                 <a class="github-link" rel="me" href="https://github.com/KingManning" aria-label="GitHub">
                     <span class="github-icon" aria-hidden="true"></span>
                 </a>
-                <a rel="me" href="https://www.linkedin.com/in/zachary-manning-64b93733a/">
-                    <img src="./assets/images/InBug-Black.png" width="30" alt="LinkedIn">
+                <a class="linkedin-link" rel="me" href="https://www.linkedin.com/in/zachary-manning-64b93733a/" aria-label="LinkedIn">
+                    <span class="linkedin-icon" aria-hidden="true"></span>
                 </a>      
             </div>
         </div>
@@ -43,7 +43,7 @@
                         </section>
                     </div>
                     <section id="experience">
-                        <h2>Experience</h2>
+                        <h2>Experience &amp; Learnings</h2>
                         <h3>Technology Cadet · <a href="https://www.ngmgroup.com.au/">Newcastle Greater Mutual Group</a></h3>
                         <p><time datetime="2025-09">September 2025</time> – present · Newcastle, NSW</p>
                         <p>Two-year cadetship across technology teams. Selected work from each rotation:</p>
@@ -56,41 +56,6 @@
                     </section>
                 </div>
             </div>
-            <section id="projects">
-                <h2>Projects</h2>
-                <h3>Spiral classification · ANN &amp; SVM</h3>
-                <ul>
-                    <li>Trained an artificial neural network (ANN) and a support vector machine (SVM) in Python, using PyTorch for the ANN.</li>
-                    <li>Tuned the SVM’s RBF kernel with five-fold cross-validation.</li>
-                    <li>Both models achieved <strong>100% training accuracy on 600 points</strong>; visualised their decision boundaries.</li>
-                </ul>
-                <figure>
-                    <img src="./assets/projects/four-spirals-neural-network.png" width="320" height="357" loading="lazy" alt="Neural network predictions form four winding bands around the labelled spiral points.">
-                    <img src="./assets/projects/four-spirals-svm.png" width="320" height="357" loading="lazy" alt="Support vector machine predictions follow the same four spirals, with different boundaries between samples.">
-                    <figcaption>ANN, then SVM. Dots: labelled samples. Shading: predictions.</figcaption>
-                </figure>
-                <h3>Food image classifier · CNN, ResNet</h3>
-                <ul>
-                    <li>Contributed to a university team classifier for <strong>40 food categories</strong>.</li>
-                    <li>Collected supermarket photos and compared a CNN trained from scratch with a pretrained ResNet.</li>
-                    <li>Tuned models on a validation split; the team evaluated overall and per-category accuracy.</li>
-                </ul>
-                <h3>Other university projects</h3>
-                <ul>
-                    <li><strong>Data pipeline:</strong> cleaned electricity demand data from five states; applied principal component analysis.</li>
-                    <li><strong>CPU scheduling:</strong> implemented four algorithms in Java and compared process wait times.</li>
-                    <li><strong>Synchronisation:</strong> coordinated shared access with semaphores; implemented timed waits in Nachos.</li>
-                    <li><strong>TuneTown 2:</strong> built a PHP/XML music catalogue with album submissions.</li>
-                    <li><strong>Spambase:</strong> clustered 4,601 emails and compared clusters with spam labels.</li>
-                    <li><strong>Virtual memory:</strong> simulated demand paging, page faults and disk writes in Java.</li>
-                </ul>
-                <h3>Personal projects</h3>
-                <ul>
-                    <li><strong><a href="https://github.com/KingManning/repository-template">Repository template</a>:</strong> Python tools to check Markdown and preview broken-link repairs.</li>
-                    <li><strong><a href="https://github.com/KingManning/zacharymanning-portfolio">This portfolio</a>:</strong> HTML and CSS, deployed through GitHub and Cloudflare Pages.</li>
-                    <li><strong>Other personal projects:</strong> developing additional projects, with details to be shared at commercial release.</li>
-                </ul>
-            </section>
             <section id="education">
                 <h2>Education &amp; Credentials</h2>
                 <h3>Bachelor of Computer Science and Data Science</h3>
@@ -106,6 +71,95 @@
                     <li><a href="https://learn.microsoft.com/en-us/users/zacmanning-8709/credentials/d453b489c1628e04">Power Automate — Microsoft Applied Skills</a></li>
                 </ul>
             </section>
+            <section id="projects">
+                <h2>Projects</h2>
+                <h3>University projects</h3>
+                <h4>Computer Science Foundations</h4>
+                <ul class="assignments">
+                    <li><strong>Data Structures</strong>
+                        <ul>
+                            <li><strong>NewyCoin:</strong> implemented a transaction ledger using a templated linked list in C++.</li>
+                            <li><strong>AlgoBank:</strong> simulated bank teller queues, customer arrivals, service times and waiting times.</li>
+                            <li><strong>The Enchanted Quill:</strong> built a bookstore inventory using a binary search tree and a hash table with separate chaining.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Algorithms</strong>
+                        <ul>
+                            <li><strong>Contact tracing:</strong> built a contact graph in Java, identified connected groups with union–find, traced contact chains with depth-first search and classified exposure zones with breadth-first search.</li>
+                            <li><strong>Resource allocation:</strong> compared dynamic programming and backtracking with branch and bound for knapsack problems, analysing runtime and memory use.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Theory of Computation</strong>
+                        <ul>
+                            <li><strong>Finite-state machines:</strong> constructed automata and regular expressions for specified languages, including a state-machine model of game-character behaviour.</li>
+                            <li><strong>Context-free languages:</strong> constructed grammars, parse trees and pushdown automata; converted grammars to Chomsky normal form and explored language closure properties.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Operating Systems</strong>
+                        <ul>
+                            <li><strong>CPU scheduling:</strong> implemented four algorithms in Java and compared process wait times.</li>
+                            <li><strong>Synchronisation:</strong> coordinated shared access with semaphores; implemented timed waits in Nachos.</li>
+                            <li><strong>Virtual memory:</strong> simulated demand paging, page faults and disk writes in Java.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>Software Development &amp; Design</h4>
+                <ul class="assignments">
+                    <li><strong>Object Oriented Programming</strong>
+                        <ul>
+                            <li><strong>Smartcard travel system:</strong> built a Java application to manage travel cards, journeys, balances and fares.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Web Technologies</strong>
+                        <ul>
+                            <li><strong>TuneTown:</strong> developed an HTML/CSS music website into a PHP/XML catalogue with album submissions, JavaScript form controls, client- and server-side validation, and DTD validation before saving XML.</li>
+                        </ul>
+                    </li>
+                    <li><strong>System Analysis and Design</strong>
+                        <ul>
+                            <li><strong>Course management requirements:</strong> contributed to a team system design through business rules and course-administration use cases, supported by UML activity, domain-class and state diagrams.</li>
+                            <li><strong>Course management design:</strong> developed detailed sequence and design-class diagrams, plus interface mockups for course creation, student enrolment, class selection and staff allocation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Database and Information Management</strong>
+                        <ul>
+                            <li><strong>Library database:</strong> developed requirements and an extended entity–relationship model, normalised the schema to BCNF, and wrote SQL to create tables and query library records.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>Data Science &amp; Machine Learning</h4>
+                <ul class="assignments">
+                    <li><strong>Data Wrangling &amp; Visualisation</strong>
+                        <ul>
+                            <li><strong>ABS data visualisation:</strong> explored mental-health consultation patterns by age and sex, created comparison charts and assessed data quality and uncertainty in the estimates.</li>
+                            <li><strong>Sydney bus trips:</strong> reshaped Opal trip data from wide to long format with pandas, converted dates, checked aggregated monthly totals and visualised travel patterns.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Predictive Analytics</strong>
+                        <ul>
+                            <li><strong>Electricity generation and emissions:</strong> analysed World Bank data for 138 countries in R using principal component analysis, k-means clustering and multiple linear regression.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Data Engineering &amp; Mining</strong>
+                        <ul>
+                            <li><strong>Electricity demand pipeline:</strong> audited and cleaned data from five states, handled missing values and duplicates, visualised demand trends, standardised features and applied principal component analysis.</li>
+                            <li><strong>Spambase:</strong> clustered 4,601 emails using k-means and Ward hierarchical clustering; compared cluster counts, profiled email features and evaluated agreement with spam labels using the adjusted Rand index.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Machine Learning</strong>
+                        <ul>
+                            <li><strong>Spiral classification:</strong> trained an ANN in PyTorch and an SVM in Python; tuned the SVM with cross-validation.</li>
+                            <li><strong>Food image classification:</strong> contributed to a team classifier for 40 food categories, comparing a CNN trained from scratch with a pretrained ResNet.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Personal projects</h3>
+                <ul>
+                    <li><strong><a href="https://github.com/KingManning/repository-template">Repository template</a>:</strong> Python tools to check Markdown and preview broken-link repairs.</li>
+                    <li><strong><a href="https://github.com/KingManning/zacharymanning-portfolio">This portfolio</a>:</strong> HTML and CSS, deployed through GitHub and Cloudflare Pages.</li>
+                    <li><strong>Other personal projects:</strong> developing additional projects, with details to be shared at commercial release.</li>
+                </ul>
+            </section>
             <section id="outside-work">
                 <h2>Outside work</h2>
                 <p>Gym, volleyball, films, gaming and music.</p>
@@ -117,8 +171,8 @@
                 <a class="github-link" rel="me" href="https://github.com/KingManning" aria-label="GitHub">
                     <span class="github-icon" aria-hidden="true"></span>
                 </a>
-                <a rel="me" href="https://www.linkedin.com/in/zachary-manning-64b93733a/">
-                    <img src="./assets/images/InBug-White.png" width="30" alt="LinkedIn">
+                <a class="linkedin-link" rel="me" href="https://www.linkedin.com/in/zachary-manning-64b93733a/" aria-label="LinkedIn">
+                    <span class="linkedin-icon" aria-hidden="true"></span>
                 </a>                
                 <address>&copy; 2026 Zachary Manning</address>
             </div>
