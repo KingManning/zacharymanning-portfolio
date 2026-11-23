@@ -319,13 +319,13 @@ footer {
         left: 1rem;
         padding-right: 0.75rem;
         border-right: 1px solid #e0e3e6;
-        background-image: url("../images/computing-motifs.svg?v=20261123-link-colour");
+        background-image: url("../images/computing-motifs.svg?v=20261123-formulas-v2");
     }
     main::after {
         right: 1rem;
         padding-left: 0.75rem;
         border-left: 1px solid #e0e3e6;
-        background-image: url("../images/ai-motifs.svg?v=20261123-link-colour");
+        background-image: url("../images/ai-motifs.svg?v=20261123-formulas-v2");
     }
 }
 
