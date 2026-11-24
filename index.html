@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The technical and developer portfolio of Zachary Manning">
+    <meta name="description" content="Zachary Manning — technology cadet in Newcastle, Australia, studying Computer Science and Data Science. Explore experience, projects and credentials.">
     <title>Zachary Manning portfolio</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css?v=20261123-formulas-v2">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css?v=20261123-navigation">
+    <script src="./assets/js/navigation.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header>
         <div class="header-content">
             <p class="site-topic">Technology Portfolio</p>
@@ -24,11 +26,20 @@
             </div>
         </div>
     </header>
+    <nav class="section-nav" aria-label="Portfolio sections">
+        <div class="nav-content">
+            <a href="#introduction">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#outside-work">Outside work</a>
+        </div>
+    </nav>
     <div class="hero">
-        <main>
+        <main id="main-content" tabindex="-1">
             <div class="intro-layout">
                 <div class="intro-content">
-                    <img class="portrait" src="./assets/images/portrait-placeholder.svg" alt="Professional Photo" width="320" height="400">
+                    <img class="portrait" src="./assets/images/portrait-placeholder.svg" alt="" width="320" height="400">
                     <div class="profile">
                         <section id="introduction" aria-label="About me">
                             <p>Technology professional in Newcastle, Australia, currently undertaking a cadetship at a bank and studying Computer Science and Data Science, majoring in AI. I would describe myself as a critical thinker, and as an optimiser.</p>
@@ -45,38 +56,98 @@
                     </div>
                     <section id="experience">
                         <h2>Experience &amp; Learnings</h2>
-                        <h3>Technology Cadet · <a href="https://www.ngmgroup.com.au/">Newcastle Greater Mutual Group</a></h3>
+                        <h3>Technology Cadet · <a href="https://www.ngmgroup.com.au/">Newcastle Greater Mutual Group &nearr;</a></h3>
                         <p><time datetime="2025-09">September 2025</time> – present · Newcastle, NSW</p>
                         <p>Two-year cadetship across technology teams. Selected work from each rotation:</p>
                         <ul>
-                            <li><strong>IT Service Desk:</strong> work included setting up shared project folders and group access permissions.</li>
+                            <li><strong>IT Service Desk:</strong> hands on experience with general IT support and systems administration tasks.</li>
                             <li><strong>Cybersecurity:</strong> contributed to cyber awareness activities and phishing simulations using Microsoft Defender.</li>
-                            <li><strong>Platforms &amp; Programming:</strong> designed and ran a legacy modernisation workflow using deterministic analysis and the GitHub Copilot SDK; configured tooling including GitHub Actions, Advanced Security, repository rulesets and Codespaces.</li>
+                            <li><strong>Platforms &amp; Programming:</strong> worked on legacy modernisation using AI workflows, and performed repository administrative tasks.</li>
                             <li><strong>Data &amp; Analytics:</strong> upcoming rotation.</li>
                         </ul>
                     </section>
                 </div>
             </div>
             <section id="education">
-                <h2>Education &amp; Credentials</h2>
-                <h3>Bachelor of Computer Science and Data Science</h3>
-                <p><a href="https://www.newcastle.edu.au/">University of Newcastle</a> · In progress · Artificial Intelligence major</p>
+                <h2>Education</h2>
+                <h3>Bachelor of Computer Science &amp; Data Science (AI Major) · <a href="https://www.newcastle.edu.au/">University of Newcastle &nearr;</a></h3>
+                <p>In progress · Newcastle, NSW</p>
                 <ul>
-                    <li><strong>Selected completed coursework:</strong> algorithms, data structures, database management, machine intelligence, predictive analytics, and data wrangling &amp; visualisation.</li>
-                    <li><strong>Languages studied:</strong> Python, R, C++ and Java.</li>
+                    <li><p>Check out my <a href="#university-projects">University Projects</a></p></li>
+                    <li><p>Languages studied:</p>
+                        <div class="circle-container">
+                            <div class="circle">
+                                <img src="./assets/images/java-icon.svg" alt="Java Logo">
+                            </div>
+                            <div class="circle">
+                                <img src="/assets/images/C++ Logo.svg" alt="C++ Logo">
+                            </div>
+                            <div class="circle">
+                                <img src="./assets/images/python-logo-only.svg" alt="Python Logo">
+                            </div>  
+                        </div>
+                    </li>
                 </ul>
-                <h3>Microsoft credentials</h3>
-                <ul>
-                    <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/B099FAD6DB1F415E?sharingId=9D0F6D0EFF31E1A4">GitHub Foundations</a></li>
-                    <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/284D1D6C016167D8?sharingId=9D0F6D0EFF31E1A4">Microsoft Certified: Azure Fundamentals</a></li>
-                    <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/173A84CF86B14930?sharingId=9D0F6D0EFF31E1A4">Microsoft Applied Skills: Accelerate AI-assisted development by using GitHub Copilot</a></li>
-                    <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/D453B489C1628E04?sharingId=9D0F6D0EFF31E1A4">Microsoft Applied Skills: Create and manage automated processes by using Power Automate</a></li>
-                </ul>
+                </section>
+                <section id="credentials">
+                <h2>Credentials</h2>
+                <h3>Certificates</h3>
+                <div class="cert-grid">
+                    <div class="cert">
+                        <img src="./assets/images/microsoft-certified-fundamentals-badge.svg" alt="Azure Fundametals badge">
+                        <p>Azure Fundamentals: AZ-900</p>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/284D1D6C016167D8?sharingId=9D0F6D0EFF31E1A4" target="_blank" rel="noopener noreferrer">
+                            View credential &nearr;
+                        </a>
+                    </div>
+                    <div class="cert">
+                        <img src="./assets/images/github-foundations.svg" alt="GitHub Foundations badge">
+                        <p>GitHub Foundations: GH-900</p>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/B099FAD6DB1F415E?sharingId=9D0F6D0EFF31E1A4" target="_blank" rel="noopener noreferrer">
+                            View credential &nearr;
+                        </a>
+                    </div>
+
+                </div>
+                <br>
+                <details class="applied-skills">
+                    <summary><h4>Microsoft Applied Skills</h4></summary>
+                    <ul class="">
+                        <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/173A84CF86B14930?sharingId=9D0F6D0EFF31E1A4">Microsoft Applied Skills: Accelerate AI-assisted development by using GitHub Copilot &nearr;</a></li>
+                        <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/D453B489C1628E04?sharingId=9D0F6D0EFF31E1A4">Microsoft Applied Skills: Create and manage automated processes by using Power Automate &nearr;</a></li>
+                    </ul>
+                </details>
             </section>
             <section id="projects">
                 <h2>Projects</h2>
+                <h3>Featured projects</h3>
+                <div class="featured-projects">
+                    <article class="project-card" aria-labelledby="spiral-title">
+                        <p class="project-type">Machine learning · University</p>
+                        <h4 id="spiral-title">Spiral classification</h4>
+                        <p class="project-tools">Python · PyTorch · SVM</p>
+                        <ul>
+                            <li>Trained an artificial neural network and a support vector machine on spiral data.</li>
+                            <li>Tuned the SVM using cross-validation.</li>
+                        </ul>
+                        <a href="#data-science-projects" data-expand="data-science-projects">Explore data science projects</a>
+                    </article>
+                    <article class="project-card" aria-labelledby="template-title">
+                        <p class="project-type">Developer tooling · Personal</p>
+                        <h4 id="template-title">Repository template</h4>
+                        <p class="project-tools">Python · Markdown</p>
+                        <ul>
+                            <li>Built tools to check Markdown in a reusable repository template.</li>
+                            <li>Preview broken-link repairs before applying changes.</li>
+                        </ul>
+                        <a href="https://github.com/KingManning/repository-template">View repository template on GitHub &nearr;</a>
+                    </article>
+                </div>
+                <section id="university-projects">
                 <h3>University projects</h3>
-                <h4>Computer Science Foundations</h4>
+                <p class="section-hint">Expand a subject area to explore the work.</p>
+                <details class="project-group" id="computer-science-projects">
+                    <summary><h4>Computer Science Foundations</h4></summary>
                 <ul class="assignments">
                     <li><strong>Data Structures</strong>
                         <ul>
@@ -105,7 +176,9 @@
                         </ul>
                     </li>
                 </ul>
-                <h4>Software Development &amp; Design</h4>
+                </details>
+                <details class="project-group" id="software-development-projects">
+                    <summary><h4>Software Development &amp; Design</h4></summary>
                 <ul class="assignments">
                     <li><strong>Object Oriented Programming</strong>
                         <ul>
@@ -129,7 +202,9 @@
                         </ul>
                     </li>
                 </ul>
-                <h4>Data Science &amp; Machine Learning</h4>
+                </details>
+                <details class="project-group" id="data-science-projects">
+                    <summary><h4>Data Science &amp; Machine Learning</h4></summary>
                 <ul class="assignments">
                     <li><strong>Data Wrangling &amp; Visualisation</strong>
                         <ul>
@@ -155,16 +230,21 @@
                         </ul>
                     </li>
                 </ul>
+                </details>
+                </section>
                 <h3>Personal projects</h3>
                 <ul>
-                    <li><strong><a href="https://github.com/KingManning/repository-template">Repository template</a>:</strong> Python tools to check Markdown and preview broken-link repairs.</li>
                     <li><strong><a href="https://github.com/KingManning/zacharymanning-portfolio">This portfolio</a>:</strong> HTML and CSS, deployed through GitHub and Cloudflare Pages.</li>
                     <li><strong>Other personal projects:</strong> developing additional projects, with details to be shared at commercial release.</li>
                 </ul>
             </section>
             <section id="outside-work">
                 <h2>Outside work</h2>
-                <p>Gym, volleyball, films, gaming and music.</p>
+                <p>Outside of work you I catch up with friends, hit the gym, play volleyball, and I enjoy films, gaming and music.</p>
+            </section>
+            <section id="disclaimer">
+                <h2>Disclaimer</h2>
+                <p>This is a personal portfolio. Views expressed are my own and do not represent those of my employer or educational institution.</p>
             </section>
         </main>
     </div>

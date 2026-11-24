@@ -68,14 +68,14 @@ a {
   cursor: pointer; /* Rendered as a hand icon when hovering over links with an href */
 }
 a:link {
-  color: -webkit-link;
+  color: #0645ad;
 }
 a:visited {
   color: #551A8B; 
 }
 a:link:active,
 a:visited:active {
-  color: #20a45b;
+  color: #08783d;
 }
 ul {
   list-style-type: disc;
@@ -98,10 +98,10 @@ li {
 /* Content specific styles */
 a:hover,
 a:focus-visible {
-    color: #20a45b;
+    color: #08783d;
 }
 body {
-    line-height: 1.2;
+    line-height: 1.5;
     min-height: 100vh;      
     min-height: 100dvh;     
     display: flex;
@@ -126,7 +126,8 @@ header {
 .header-content {
     max-width: 56rem;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    column-gap: 1rem;
     grid-template-areas: "topic name links";
     align-items: center;
 }
@@ -134,18 +135,15 @@ header {
     grid-area: topic;
     margin: 0;
     justify-self: start;
-    font-size: 1.5em;
-    margin-top: 0.83em;
-    margin-bottom: 0.83em;
-    margin-left: 0;
-    margin-right: 0;
+    font-size: clamp(1.05rem, 2vw, 1.5rem);
+    margin-block: 0.83em;
     font-weight: bold;
 }
 .site-name {
     grid-area: name;
     margin: 0;
     justify-self: center;
-    font-size: 1.5em;
+    font-size: clamp(1.05rem, 2vw, 1.5rem);
     margin-top: 0.83em;
     margin-bottom: 0.83em;
     margin-left: 0;
@@ -186,7 +184,7 @@ main > section, .intro-content > section {
     padding-block: 0.5rem 1.5rem;
 }
 #experience {
-    line-height: 1.2;
+    line-height: 1.5;
 }
 section p + p {
     margin-block-start: 0.75rem;
@@ -241,6 +239,8 @@ section ul.assignments > li + li {
     justify-self: end;
 }
 .github-link, .linkedin-link {
+    min-width: 44px;
+    min-height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -272,7 +272,7 @@ footer .linkedin-link:link, footer .linkedin-link:visited {
 .linkedin-link:hover, .linkedin-link:focus-visible, .linkedin-link:active,
 footer .github-link:hover, footer .github-link:focus-visible, footer .github-link:active,
 footer .linkedin-link:hover, footer .linkedin-link:focus-visible, footer .linkedin-link:active {
-    color: #20a45b;
+    color: #08783d;
 }
 .github-link:focus-visible {
     outline: 2px solid currentColor;
@@ -296,9 +296,9 @@ footer {
     font-size: clamp(0.5rem, 3vw, 1rem);
 }
 
-/* Reserve two side gutters before showing artwork. This also covers laptop
-   viewports reduced by display scaling. Small screens keep content only. */
-@media (min-width: 48rem) {
+/* Reserve side artwork for wide layouts. Phones and tablets use the full
+   reading column without narrow decorative gutters. */
+@media (min-width: 64rem) {
     main {
         --content-width: min(56rem, calc(100% - 18rem));
         --artwork-gap: clamp(1rem, 2vw, 3rem);
@@ -370,4 +370,220 @@ footer {
 }
 #outside-work {
     border-top: 1px solid #d4d4d4;
+}
+#disclaimer {
+    border-top: 1px solid #d4d4d4;
+}
+#credentials {
+    border-top: 1px solid #d4d4d4;
+}
+
+/* Navigation and keyboard access. */
+:root {
+    --nav-offset: 5rem;
+}
+section[id], details[id], #main-content {
+    scroll-margin-top: var(--nav-offset);
+}
+a, summary {
+    -webkit-tap-highlight-color: #d6eadf;
+}
+a:focus-visible, summary:focus-visible, #main-content:focus-visible {
+    outline: 3px solid #005fcc;
+    outline-offset: 4px;
+}
+a:hover, a:focus-visible {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+}
+.skip-link {
+    position: fixed;
+    z-index: 10;
+    top: 0.75rem;
+    left: 1rem;
+    padding: 0.75rem 1rem;
+    background: white;
+    transform: translateY(-200%);
+}
+.skip-link:focus {
+    transform: translateY(0);
+}
+.section-nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: white;
+    border-bottom: 1px solid #d4d4d4;
+}
+.nav-content {
+    max-width: 56rem;
+    width: calc(100% - 2rem);
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    padding-block: 0.35rem;
+}
+.nav-content a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 0.35rem 0.25rem;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+}
+.nav-content a[aria-current="location"] {
+    color: #075c30;
+    border-bottom-color: currentColor;
+    font-weight: bold;
+}
+footer a:focus-visible {
+    outline-color: #8fbbff;
+}
+footer .github-link:is(:hover, :focus-visible, :active),
+footer .linkedin-link:is(:hover, :focus-visible, :active) {
+    color: #63e69a;
+}
+/* Keep the project overview short, with details available on demand. */
+.featured-projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-block: 1rem 2rem;
+}
+.project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border: 1px solid #c6ccca;
+    border-top: 3px solid #08783d;
+    border-radius: 0.25rem;
+    background: #fafcfb;
+}
+.project-card h4 {
+    font-size: 1.25rem;
+    margin-block: 0.4rem;
+}
+.project-type, .project-tools, .section-hint {
+    color: #4a5550;
+}
+.project-type, .project-tools {
+    font-size: 0.9rem;
+}
+.project-card ul {
+    padding-left: 1.25rem;
+    margin-block: 1rem;
+}
+.project-card > a {
+    margin-top: auto;
+    padding-block: 0.5rem;
+}
+.project-group {
+    margin-block: 0.75rem;
+    border: 1px solid #c6ccca;
+    border-radius: 0.25rem;
+    padding-inline: 1rem;
+}
+.project-group summary {
+    display: list-item;
+    cursor: pointer;
+    padding-block: 1rem;
+    list-style: disclosure-closed inside;
+}
+.project-group[open] summary {
+    list-style-type: disclosure-open;
+    border-bottom: 1px solid #d4d4d4;
+}
+.project-group summary h4 {
+    display: inline;
+    margin: 0;
+}
+.project-group summary:hover {
+    color: #08783d;
+}
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.circle img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.cert img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+.applied-skills {
+    margin-block: 0.75rem;
+    border: 1px solid #c6ccca;
+    border-radius: 0.25rem;
+    padding-inline: 1rem;
+}
+.applied-skills summary {
+    display: list-item;
+    cursor: pointer;
+    padding-block: 1rem;
+    list-style: disclosure-closed inside;
+}
+.applied-skills[open] summary {
+    list-style-type: disclosure-open;
+    border-bottom: 1px solid #d4d4d4;
+}
+.applied-skills summary h4 {
+    display: inline;
+    margin: 0;
+}
+.applied-skills summary:hover {
+    color: #08783d;
+}
+
+@media (max-width: 42rem) {
+    :root { --nav-offset: 8rem; }
+    .featured-projects { grid-template-columns: 1fr; }
+    .nav-content { column-gap: 0.75rem; }
+    .portrait {
+        width: 40%;
+        margin: 0 0 1rem 1rem;
+    }
+    .interests {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+    }
+    .interests li { inline-size: min(100%, 8rem); }
+}
+@media print {
+    .section-nav, .skip-link { display: none; }
+    .project-group { break-inside: avoid; }
 }
