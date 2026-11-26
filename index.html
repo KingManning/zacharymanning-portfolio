@@ -7,7 +7,7 @@
     <title>Zachary Manning portfolio</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css?v=20261123-navigation">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css?v=20261126-image-paths">
     <script src="./assets/js/navigation.js" defer></script>
 </head>
 <body>
@@ -31,6 +31,8 @@
             <a href="#introduction">About</a>
             <a href="#experience">Experience</a>
             <a href="#education">Education</a>
+            <a href="#languages">Languages</a>
+            <a href="#credentials">Credentials</a>
             <a href="#projects">Projects</a>
             <a href="#outside-work">Outside work</a>
         </div>
@@ -74,36 +76,73 @@
                 <p>In progress · Newcastle, NSW</p>
                 <ul>
                     <li><p>Check out my <a href="#university-projects">University Projects</a></p></li>
-                    <li><p>Languages studied:</p>
-                        <div class="circle-container">
-                            <div class="circle">
-                                <img src="./assets/images/java-icon.svg" alt="Java Logo">
-                            </div>
-                            <div class="circle">
-                                <img src="/assets/images/C++ Logo.svg" alt="C++ Logo">
-                            </div>
-                            <div class="circle">
-                                <img src="./assets/images/python-logo-only.svg" alt="Python Logo">
-                            </div>  
-                        </div>
+                </ul>
+            </section>
+            <section id="languages" aria-labelledby="languages-title">
+                <h2 id="languages-title">Languages &amp; formats</h2>
+                <p>Studied or used in projects.</p>
+                <h3>Programming &amp; scripting</h3>
+                <ul class="language-list" role="list">
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/java.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>Java</span>
+                    </li>
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/c++.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>C++</span>
+                    </li>
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/csharp.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>C#</span>
+                    </li>
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/python.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>Python</span>
+                    </li>
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/javascript.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>JavaScript</span>
+                    </li>
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/php.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>PHP</span>
                     </li>
                 </ul>
-                </section>
-                <section id="credentials">
+                <h3>Markup, styles &amp; data</h3>
+                <ul class="language-list language-formats" role="list">
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/html5.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>HTML</span>
+                    </li>
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/css3.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>CSS</span>
+                    </li>
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/markdown.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>Markdown</span>
+                    </li>
+                    <li>
+                        <span class="circle"><img src="./assets/images/languages/json.svg" alt="" width="90" height="90" loading="lazy"></span>
+                        <span>JSON</span>
+                    </li>
+                </ul>
+            </section>
+            <section id="credentials">
                 <h2>Credentials</h2>
                 <h3>Certificates</h3>
                 <div class="cert-grid">
                     <div class="cert">
-                        <img src="./assets/images/microsoft-certified-fundamentals-badge.svg" alt="Azure Fundametals badge">
+                        <img src="./assets/images/certificates/microsoft-certified-fundamentals-badge.svg" alt="Microsoft Certified: Azure Fundamentals">
                         <p>Azure Fundamentals: AZ-900</p>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/284D1D6C016167D8?sharingId=9D0F6D0EFF31E1A4" target="_blank" rel="noopener noreferrer">
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/284D1D6C016167D8?sharingId=9D0F6D0EFF31E1A4" target="_blank" rel="noopener noreferrer" aria-label="View credential &nearr;: Azure Fundamentals (opens in a new tab)">
                             View credential &nearr;
                         </a>
                     </div>
                     <div class="cert">
-                        <img src="./assets/images/github-foundations.svg" alt="GitHub Foundations badge">
+                        <img src="./assets/images/certificates/github-foundations.svg" alt="GitHub Foundations badge">
                         <p>GitHub Foundations: GH-900</p>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/B099FAD6DB1F415E?sharingId=9D0F6D0EFF31E1A4" target="_blank" rel="noopener noreferrer">
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/B099FAD6DB1F415E?sharingId=9D0F6D0EFF31E1A4" target="_blank" rel="noopener noreferrer" aria-label="View credential &nearr;: GitHub Foundations (opens in a new tab)">
                             View credential &nearr;
                         </a>
                     </div>
@@ -115,6 +154,12 @@
                     <ul class="">
                         <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/173A84CF86B14930?sharingId=9D0F6D0EFF31E1A4">Microsoft Applied Skills: Accelerate AI-assisted development by using GitHub Copilot &nearr;</a></li>
                         <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/ZacManning-8709/D453B489C1628E04?sharingId=9D0F6D0EFF31E1A4">Microsoft Applied Skills: Create and manage automated processes by using Power Automate &nearr;</a></li>
+                    </ul>
+                </details>
+                <details class="applied-skills">
+                    <summary><h4>NVIDIA Deep Learning Institute</h4></summary>
+                    <ul class="">
+                        <li><a href="https://learn.nvidia.com/certificates?id=o5yig_BQTo2Aaz-vKQ09kg#">Fundamentals of Deep Learning &nearr;</a></li>
                     </ul>
                 </details>
             </section>
@@ -137,8 +182,8 @@
                         <h4 id="template-title">Repository template</h4>
                         <p class="project-tools">Python · Markdown</p>
                         <ul>
-                            <li>Built tools to check Markdown in a reusable repository template.</li>
-                            <li>Preview broken-link repairs before applying changes.</li>
+                            <li>Built tools to check Markdown and broken links, with PyMarkdown for linting and fixes.</li>
+                            <li>Uses Open Knowledge Format for documentation.</li>
                         </ul>
                         <a href="https://github.com/KingManning/repository-template">View repository template on GitHub &nearr;</a>
                     </article>
@@ -240,7 +285,7 @@
             </section>
             <section id="outside-work">
                 <h2>Outside work</h2>
-                <p>Outside of work you I catch up with friends, hit the gym, play volleyball, and I enjoy films, gaming and music.</p>
+                <p>Outside of work I catch up with friends, hit the gym, play volleyball, and I enjoy films, gaming and music.</p>
             </section>
             <section id="disclaimer">
                 <h2>Disclaimer</h2>

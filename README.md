@@ -8,6 +8,7 @@ Personal portfolio website showcasing my professional experience, technical skil
 
 - **HTML5** — Website structure and content
 - **CSS3** — Styling and responsive design
+- **JavaScript** — Active navigation and linked project expansion
 - **Cloudflare Pages** — Static hosting and CDN
 - **GitHub** — Version control and automated deployment integration
 
@@ -24,7 +25,8 @@ It is intentionally designed to be lightweight, fast, and accessible.
 │   │   ├── reset.css
 │   │   └── style.css
 │   ├── images/
-│   └── projects/       - Spiral classification plots
+│   └── js/
+│       └── navigation.js - Progressive navigation enhancements
 ├── favicon.svg
 ├── .gitignore
 ├── .gitattributes
@@ -37,6 +39,8 @@ It is intentionally designed to be lightweight, fast, and accessible.
 Clone the repository and open `index.html` in a browser.
 Alternatively, use a local HTTP server to test the website, particularly its root-relative links.
 No installation or build process is required.
+
+University project groups use native disclosures and start collapsed. Navigation and disclosures remain usable without JavaScript. The blank portrait placeholder is decorative (`alt=""`); replace this with descriptive alternative text when adding the real portrait.
 
 ## Deployment
 
@@ -53,3 +57,5 @@ Personal content, photographs, branding, and other non-code assets are excluded 
 ---
 
 © 2026 Zachary Manning. All rights reserved for personal content.
+
+Additional language icons in `assets/images/languages/` are from [Devicon](https://github.com/devicons/devicon), with its MIT licence included in that folder.

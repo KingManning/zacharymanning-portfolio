@@ -40,7 +40,15 @@
         });
     });
     window.addEventListener('scroll', scheduleUpdate, { passive: true });
-    window.addEventListener('resize', scheduleUpdate);
+    // Wrapped navigation needs a matching anchor offset on narrow screens.
+    function updateNavOffset() {
+        const offset = Math.ceil(nav.getBoundingClientRect().height) + 24;
+        document.documentElement.style.setProperty('--nav-offset', `${offset}px`);
+        scheduleUpdate();
+    }
+    window.addEventListener('resize', updateNavOffset);
+    if ('ResizeObserver' in window) new ResizeObserver(updateNavOffset).observe(nav);
+    updateNavOffset();
     window.addEventListener('hashchange', expandLinkedGroup);
     document.querySelectorAll('details').forEach(group => group.addEventListener('toggle', scheduleUpdate));
     expandLinkedGroup();

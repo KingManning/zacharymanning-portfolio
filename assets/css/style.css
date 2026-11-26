@@ -65,14 +65,11 @@ img {
 a {
   display: inline;
   text-decoration: underline;
+  text-underline-offset: 0.2em;
   cursor: pointer; /* Rendered as a hand icon when hovering over links with an href */
 }
-a:link {
-  color: #0645ad;
-}
-a:visited {
-  color: #551A8B; 
-}
+a:link,
+a:visited,
 a:link:active,
 a:visited:active {
   color: #08783d;
@@ -98,7 +95,7 @@ li {
 /* Content specific styles */
 a:hover,
 a:focus-visible {
-    color: #08783d;
+    color: #63e69a;
 }
 body {
     line-height: 1.5;
@@ -157,13 +154,19 @@ main {
     padding-block-start: 2rem;
 }
 .profile {
-    margin-block-end: 0;
+    min-width: 0;
+    grid-column: 1;
+    grid-row: 1;
+    container-type: inline-size;
 }
 .intro-layout {
     margin-block-end: 0;
 }
 .intro-content {
-    display: flow-root;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) min(40%, 20rem);
+    column-gap: 1.5rem;
+    align-items: start;
     max-width: 56rem;
     margin-inline: auto;
     line-height: 1.5;
@@ -184,6 +187,10 @@ main > section, .intro-content > section {
     padding-block: 0.5rem 1.5rem;
 }
 #experience {
+    box-sizing: border-box;
+    width: 100%;
+    grid-column: 1 / -1;
+    min-width: 0;
     line-height: 1.5;
 }
 section p + p {
@@ -204,8 +211,8 @@ section ul.assignments > li + li {
     margin-block-start: 1rem;
 }
 .interests {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 8rem));
     gap: 0.75rem;
     list-style: none;
     padding: 0;
@@ -214,18 +221,20 @@ section ul.assignments > li + li {
     box-sizing: border-box;
     display: grid;
     place-content: center;
-    inline-size: 8rem;
+    inline-size: min(100%, 8rem);
     aspect-ratio: 1;
+    min-width: 0;
     padding: 0.5rem;
     border: 1px solid currentColor;
     border-radius: 50%;
     text-align: center;
 }
 .portrait {
-    float: right;
-    width: 40%;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
     max-width: 20rem;
-    margin: 0 0 1rem 1.5rem;
+    margin: 0;
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
@@ -259,10 +268,10 @@ section ul.assignments > li + li {
     background-color: currentColor;
 }
 .github-icon {
-    mask: url("../images/GitHub_Invertocat_Black.svg") center / contain no-repeat;
+    mask: url("../images/social-icons/GitHub_Invertocat_Black.svg") center / contain no-repeat;
 }
 .linkedin-icon {
-    mask: url("../images/LinkedIn_InBug.svg") center / contain no-repeat;
+    mask: url("../images/social-icons/LinkedIn_InBug.svg") center / contain no-repeat;
 }
 footer .github-link:link, footer .github-link:visited,
 footer .linkedin-link:link, footer .linkedin-link:visited {
@@ -344,14 +353,11 @@ footer {
     .header-content, .footer-content {
         width: calc(100% - 2rem);
     }
-    .portrait {
-        margin-inline-start: 1rem;
-    }
 }
-/* Let the interest circles use the full text column beside narrow gutters. */
-@media (max-width: 64rem) {
-    .profile > section + section {
-        clear: both;
+/* Use four circles only when the text column can comfortably fit them. */
+@container (min-width: 34.25rem) {
+    .interests {
+        grid-template-columns: repeat(4, minmax(0, 8rem));
     }
 }
 @media print {
@@ -394,7 +400,6 @@ a:focus-visible, summary:focus-visible, #main-content:focus-visible {
 }
 a:hover, a:focus-visible {
     text-decoration-thickness: 2px;
-    text-underline-offset: 0.2em;
 }
 .skip-link {
     position: fixed;
@@ -432,11 +437,12 @@ a:hover, a:focus-visible {
     padding: 0.35rem 0.25rem;
     border-bottom: 3px solid transparent;
     text-decoration: none;
+    font-weight: bold;
 }
 .nav-content a[aria-current="location"] {
-    color: #075c30;
-    border-bottom-color: currentColor;
-    font-weight: bold;
+    color: #63e69a;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
 footer a:focus-visible {
     outline-color: #8fbbff;
@@ -500,17 +506,23 @@ footer .linkedin-link:is(:hover, :focus-visible, :active) {
     margin: 0;
 }
 .project-group summary:hover {
-    color: #08783d;
+    color: #63e69a;
 }
 .circle-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: clamp(0.75rem, 3vw, 1.875rem);
+    margin-block: 1rem;
 }
 .circle {
-    width: 150px;
-    height: 150px;
+    box-sizing: border-box;
+    flex: 0 0 clamp(6rem, 18vw, 9.375rem);
+    width: clamp(6rem, 18vw, 9.375rem);
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
     border-radius: 50%;
     border: 1px solid black;
     display: flex;
@@ -525,7 +537,7 @@ footer .linkedin-link:is(:hover, :focus-visible, :active) {
 }
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
     gap: 40px;
     max-width: 800px;
     margin: 0 auto;
@@ -566,24 +578,71 @@ footer .linkedin-link:is(:hover, :focus-visible, :active) {
 }
 .applied-skills summary:hover {
     color: #08783d;
+    color: #63e69a;
 }
 
 @media (max-width: 42rem) {
     :root { --nav-offset: 8rem; }
     .featured-projects { grid-template-columns: 1fr; }
     .nav-content { column-gap: 0.75rem; }
-    .portrait {
-        width: 40%;
-        margin: 0 0 1rem 1rem;
-    }
-    .interests {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        justify-items: center;
-    }
-    .interests li { inline-size: min(100%, 8rem); }
 }
 @media print {
     .section-nav, .skip-link { display: none; }
     .project-group { break-inside: avoid; }
+}
+
+@media (max-width: 30rem) {
+    .intro-content { display: flow-root; }
+    .profile { container-type: normal; }
+    .portrait {
+        float: right;
+        width: 40%;
+        margin: 0 0 1rem 1rem;
+    }
+    .profile > section + section { clear: both; }
+    .interests {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+    }
+}
+
+/* Language names remain readable independently of their decorative logos. */
+#languages {
+    border-top: 1px solid #d4d4d4;
+    container-type: inline-size;
+}
+.language-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem 1rem;
+    list-style: none;
+    padding: 0;
+    margin-block: 1rem 2rem;
+}
+#languages .language-list li + li { margin-block-start: 0; }
+.language-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    min-width: 0;
+}
+.language-list .circle {
+    flex: none;
+    width: min(100%, 8rem);
+}
+.language-formats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@container (min-width: 52rem) {
+    .language-list:not(.language-formats) {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+@container (max-width: 30rem) {
+    .language-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
